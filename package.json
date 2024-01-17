@@ -1,0 +1,24 @@
+{
+  "name": "native-web-components-1",
+  "version": "1.0.0",
+  "main": "my-element.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhi10/native-web-components"
+  },
+  "bugs": {
+    "url": "https://github.com/bhi10/native-web-components/issues"
+  },
+  "homepage": "https://github.com/bhi10/native-web-components",
+  "author": {
+    "name": "Hiten Bhayani",
+    "email": "hitenbhayani41@gmail.com",
+    "url": "https://github.com/bhi10"
+  },
+  "license": "MIT",
+  "keywords": [
+    "Web components",
+    "shadowDOM"
+  ]
+}
