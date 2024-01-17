@@ -8,7 +8,7 @@ class MyElement extends HTMLElement {
   }
 
   connectedCallback() {
-    const initialValue = this.getAttribute("counter");
+    const initialValue = this.getAttribute("initial-value");
     if (initialValue) this.counter = initialValue;
 
     this.applyStyle();
@@ -29,6 +29,8 @@ class MyElement extends HTMLElement {
     const counterSpan = document.createElement("span");
     counterSpan.textContent = this.counter;
 
+    counterSpan.addEventListener('click', this._onCounterClick.bind(this))
+
     this.shadowRoot.appendChild(counterSpan);
   }
 
@@ -42,6 +44,10 @@ class MyElement extends HTMLElement {
   updateCounter() {
     const counterSpan = this.shadowRoot.querySelector("span");
     counterSpan.textContent = this.counter;
+  }
+
+  _onCounterClick() {
+    console.log("current value: ", this.counter);
   }
 
   disconnectedCallback() {
