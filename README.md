@@ -64,3 +64,37 @@ Once the script is included, you can use the my-element tag in your HTML:
   </body>
 </html>
 ```
+
+## Contribution Guidelines
+
+### Local Development
+
+1. Clone the repository:
+
+```shell
+git clone https://github.com/bhi10/native-web-components-1.git
+```
+
+2. Install dependencies:
+
+```shell
+cd my-element
+npm install
+```
+
+3. Run the development server:
+
+```shell
+npm run serve
+```
+
+### Publishing
+
+When you're ready to publish a new version, follow these steps:
+
+1. Update the version number in `package.json`.
+2. Publish to npm:
+
+```shell
+npm publish
+```
