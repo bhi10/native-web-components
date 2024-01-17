@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "my-element.js",
   "type": "module",
+  "scripts": {
+    "serve": "web-dev-server --node-resolve --open"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bhi10/native-web-components"
@@ -20,5 +23,8 @@
   "keywords": [
     "Web components",
     "shadowDOM"
-  ]
+  ],
+  "devDependencies": {
+    "@web/dev-server": "^0.4.1"
+  }
 }

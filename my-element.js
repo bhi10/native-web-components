@@ -2,7 +2,7 @@ class MyElement extends HTMLElement {
   constructor() {
     super();
 
-    this.attachShadow({ mode: "open" });
+    this.renderRoot = this.attachShadow({ mode: "open" });
 
     this.counter = 0;
   }
@@ -18,27 +18,18 @@ class MyElement extends HTMLElement {
 
   applyStyle() {
     const sheet = new CSSStyleSheet();
-    sheet.replaceSync("div { display: block }");
+    sheet.replaceSync(
+      ":host{ flex: 1; display: flex; justify-content: center; font-size: 24px; } "
+    );
+    this.renderRoot.adoptedStyleSheets = [sheet];
   }
 
   render() {
-    const link = document.createElement("link");
-    link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
-    link.rel = "stylesheet";
-    this.shadowRoot.appendChild(link);
-    const container = document.createElement("div");
-    container.classList.add("container");
-
+    // Counter span
     const counterSpan = document.createElement("span");
     counterSpan.textContent = this.counter;
-    counterSpan.classList.add("fs-4", "text-primary", "d-flex", "justify-content-center");
 
-    const slotElement = document.createElement('slot');
-
-    container.appendChild(counterSpan);
-    container.appendChild(slotElement);
-
-    this.shadowRoot.appendChild(container);
+    this.shadowRoot.appendChild(counterSpan);
   }
 
   startCounter() {
